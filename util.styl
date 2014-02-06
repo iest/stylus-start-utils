@@ -1,6 +1,6 @@
 // Linear gradients
 linearGradient(startPoint, startColor, startInterval, endColor, endInterval)
-    background-color rgba(startColor)
+    background-color rgb(endColor)
     background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
     background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
     background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
@@ -66,7 +66,7 @@ color()
 
 opacity(amount)
     opacity amount
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)" % (amount * 100);
+    -ms-filter: \"'progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)' % (amount * 100)\"
 
 
 overflow(type)
