@@ -1,5 +1,3 @@
-/* STYLUS UTILITIES ——————————————————————————————————————————————————————————*/
-
 // Linear gradients
 linearGradient(startPoint, startColor, startInterval, endColor, endInterval)
     background-color rgba(startColor)
@@ -10,8 +8,8 @@ linearGradient(startPoint, startColor, startInterval, endColor, endInterval)
     background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
 
 // Bright outline so you can see stuff
-blueprint(color= crazy_blue)
-    outline 1px dashed color
+blueprint(color= cyan)
+    outline 4px dashed color
 
 // Vendor function to output vendor prefixes
 vendor(thing, value)
@@ -49,9 +47,11 @@ indentOutOfSight()
 background-color()
     if arguments == transparent
        background-color transparent
+    if arguments == none
+       background-color none
     else if alpha(arguments) != 1
-        background-color rgba(arguments)
         background-color rgb(arguments)
+        background-color rgba(arguments)
      
     else
         background-color arguments
@@ -67,6 +67,15 @@ color()
 opacity(amount)
     opacity amount
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)" % (amount * 100);
+
+
+overflow(type)
+    if type != hidden
+        overflow type
+        -webkit-overflow-scrolling touch
+    else
+        overflow type
+
 
 // Some CSS3 modifiers
 transform()
